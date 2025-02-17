@@ -1,2 +1,2 @@
-# noi-2023-solutions
+# olympiad-training-sols
 national.... whatever lol! :joy:
