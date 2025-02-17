@@ -1,2 +1,2 @@
-# olympiad-training-sols
+# olympiad training sols
 national.... whatever lol! :joy:
