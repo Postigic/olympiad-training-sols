@@ -5,7 +5,7 @@ for _ in range(n):
     i = list(map(int, input().split()))
     swords.append(i)
 
-swords.sort(reverse=True, key=lambda x: x[0])
+swords.sort(reverse=True, key=lambda x: (x[0], x[1]))
 max_b = -float("inf")
 count = 0
 
