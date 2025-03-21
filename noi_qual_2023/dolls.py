@@ -1,23 +1,34 @@
-n = int(input())
-nums = list(map(int, input().split()))
+import sys
+import bisect
+
+n = int(sys.stdin.readline().strip())
+dolls = list(map(int, sys.stdin.readline().strip().split()))
+
+freq = {}
+sorted_keys = []
+
+def insert_doll(x):
+    if x in freq:
+        freq[x] += 1
+    else:
+        freq[x] = 1
+        bisect.insort(sorted_keys, x)
+
+def compute_chain():
+    chain_length = 0
+    last = -float("inf")
+    for size in sorted_keys:
+        if size >= last + 2:
+            chain_length += 1
+            last = size
+    return chain_length
 
 results = []
-available_dolls = []
 
-for i in range(n):
-    available_dolls.append(nums[i])
-    available_dolls.sort()
+for doll in dolls:
+    insert_doll(doll)
+    results.append(compute_chain())
 
-    stack_size = 0
-    current_size = -float("inf")
+print(" ".join(map(str, results)))
 
-    for doll in available_dolls:
-        if doll - current_size >= 2:
-            stack_size += 1
-            current_size = doll
-
-    results.append(stack_size)
-
-print(*results)
-
-# O(n log n)
+# WHUIAUHRAUIHR UIHADH AR IWOHROISAHRHIOARIOHARHIOARH OIRAHOIROIRA nothing is working i'm WASHED
